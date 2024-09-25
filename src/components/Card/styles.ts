@@ -1,6 +1,4 @@
 import styled from 'styled-components'
-import patternDividerDesktop from '@assets/pattern-divider-desktop.svg'
-import patternDividerMobile from '@assets/pattern-divider-mobile.svg'
 
 export const Section = styled.section`
     position: relative;
@@ -43,18 +41,6 @@ export const Advice = styled.p`
     max-width: 100%;
     word-wrap: break-word;
     overflow-wrap: break-word;
-`
-
-export const PatternDivider = styled.img`
-    width: 100%;
-
-    @media (max-width: 768px) {
-        content: url(${patternDividerMobile});
-    }
-
-    @media (min-width: 769px) {
-        content: url(${patternDividerDesktop});
-    }
 `
 
 export const DiceButton = styled.button`    

@@ -4,7 +4,9 @@ import diceImg from '@assets/icon-dice.svg'
 import { fetchAdvice } from '@services/adviceApi'
 import { useEffect, useState } from 'react'
 
-import { Section, AdviceID, Advice, PatternDivider, DiceButton } from './styles'
+import { Section, AdviceID, Advice, DiceButton } from './styles'
+import patternDividerDesktop from '@assets/pattern-divider-desktop.svg'
+import patternDividerMobile from '@assets/pattern-divider-mobile.svg'
 
 export function Card() {
     const [advice, setAdvice] = useState<string | null>(null)
@@ -40,7 +42,15 @@ export function Card() {
                 <>
                     <AdviceID>Advice #{adviceID}</AdviceID>
                     <Advice>{advice}</Advice>
-                    <PatternDivider alt="Pattern Divider" />
+                    <img
+                        src={
+                            window.innerWidth <= 768
+                                ? patternDividerMobile
+                                : patternDividerDesktop
+                        }
+                        alt="Pattern Divider"
+                        style={{ width: '100%' }}
+                    />
                     <DiceButton onClick={getAdvice} aria-label="Get new advice">
                         <img src={diceImg} alt="Dice icon" />
                     </DiceButton>
